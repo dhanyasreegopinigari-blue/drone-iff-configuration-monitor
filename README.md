@@ -6,6 +6,10 @@ This project provides a modular architecture for device configuration, input val
 
 > **Note:** The application currently operates in simulation mode because physical IFF hardware is not available. The architecture is designed to support future hardware integration when the required hardware communication specifications are available.
 
+## Application Preview
+
+![Drone IFF Application](images/application-preview.png)
+
 ### ✨ Features
 
 - 🖥️ PyQt5 desktop application
