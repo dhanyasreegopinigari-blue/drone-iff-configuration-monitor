@@ -1,6 +1,11 @@
 # Virtual environment
 .venv/
 
+# PyInstaller
+build/
+dist/
+*.spec
+
 # Python cache
 __pycache__/
 *.py[cod]
@@ -8,13 +13,13 @@ __pycache__/
 # Pytest
 .pytest_cache/
 
-# Logs
-*.log
-
+# Runtime files
+config.json
+device.log
 # IDE/editor files
 .vscode/
 .idea/
 
-# Windows
+# OS files
 Thumbs.db
-Desktop.ini
+.DS_Store

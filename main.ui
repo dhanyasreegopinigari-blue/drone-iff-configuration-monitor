@@ -49,7 +49,7 @@
            <widget class="QFrame" name="leftFrame">
             <property name="styleSheet">
              <string notr="true">QFrame#leftFrame {
-    background-color: #F2F7FD;
+    background-color: #rgb(182, 98, 255);
     border: 1px solid #E1EAF4;
     border-radius: 20px;
 }</string>
@@ -83,7 +83,7 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_2">
                 <item row="2" column="0">
-                 <widget class="QLabel" name="statusValueLabel">
+                 <widget class="QLabel" name="statusLabel">
                   <property name="styleSheet">
                    <string notr="true">QLabel {
     color: #159447;
@@ -590,7 +590,7 @@ QPushButton#applyButton:hover {
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../DHANYA SREE/drone1.jpeg</pixmap>
+                <pixmap>images/drone1.jpeg</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -667,7 +667,7 @@ QPushButton#applyButton:hover {
             </property>
             <property name="font">
              <font>
-              <pointsize>28</pointsize>
+              <pointsize>-1</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -723,7 +723,7 @@ QPushButton#applyButton:hover {
             </property>
             <property name="font">
              <font>
-              <pointsize>24</pointsize>
+              <pointsize>-1</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -742,7 +742,7 @@ QPushButton#applyButton:hover {
            <widget class="QLabel" name="identifyLabel">
             <property name="font">
              <font>
-              <pointsize>24</pointsize>
+              <pointsize>-1</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -761,7 +761,7 @@ QPushButton#applyButton:hover {
            <widget class="QLabel" name="rsepondLabel">
             <property name="font">
              <font>
-              <pointsize>24</pointsize>
+              <pointsize>-1</pointsize>
              </font>
             </property>
             <property name="styleSheet">

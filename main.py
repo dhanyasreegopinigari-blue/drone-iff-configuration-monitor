@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
@@ -15,7 +16,10 @@ class DroneIFF(QMainWindow):
         super().__init__()
 
         # Load the interface created in Qt Designer
-        uic.loadUi("main.ui", self)
+        base_path = Path(__file__).resolve().parent
+        ui_path = base_path / "main.ui"
+
+        uic.loadUi(str(ui_path), self)
 
         # Configuration file
         self.config_manager = ConfigManager()
@@ -28,14 +32,6 @@ class DroneIFF(QMainWindow):
         self.logger = AppLogger("device.log")
 
         self.logger.info("Application started")
-
-        self.last_connection_state = None
-
-        self.monitor_timer = QTimer()
-
-        self.monitor_timer.timeout.connect(
-            self.monitor_device
-        )
 
         self.last_connection_state = None
 
@@ -83,32 +79,32 @@ class DroneIFF(QMainWindow):
 
         if status == "READY":
 
-            self.statusValueLabel.setText("🟢 READY")
+            self.statusLabelTitle.setText("🟢 READY")
             self.deviceReadyLabel.setText("● Device Ready")
 
         elif status == "CONFIGURED":
 
-            self.statusValueLabel.setText("🟢 CONFIGURED")
+            self.statusLabelTitle.setText("🟢 CONFIGURED")
             self.deviceReadyLabel.setText("● Configuration Ready")
 
         elif status == "ERROR":
 
-            self.statusValueLabel.setText("🔴 ERROR")
+            self.statusLabelTitle.setText("🔴 ERROR")
             self.deviceReadyLabel.setText("● Configuration Error")
 
         elif status == "SAVED":
 
-            self.statusValueLabel.setText("🟢 SAVED")
+            self.statusLabelTitle.setText("🟢 SAVED")
             self.deviceReadyLabel.setText("● Configuration Saved")
 
         elif status == "CONNECTED":
 
-            self.statusValueLabel.setText("🟢 CONNECTED")
+            self.statusLabelTitle.setText("🟢 CONNECTED")
             self.deviceReadyLabel.setText("● Device Connected")
 
         elif status == "DISCONNECTED":
 
-            self.statusValueLabel.setText("🟡 DISCONNECTED")
+            self.statusLabelTitle.setText("🟡 DISCONNECTED")
             self.deviceReadyLabel.setText("● Device Disconnected")     
 
     def reset_configuration(self):
