@@ -1,71 +1,68 @@
 # 🚁 Drone IFF Configuration & Monitoring Application
 
-✅ A PyQt5-based desktop application for configuring and monitoring a Drone IFF system through a modular, hardware-independent architecture.
+A professional PyQt5 desktop application for configuring and monitoring a Drone IFF system.
 
-✅ The application provides configuration management, input validation, device-state management, connection monitoring, persistent configuration storage, logging, and automated testing.
+This project provides a modular architecture for device configuration, input validation, persistent configuration storage, device-state management, logging, automated testing, and hardware-independent simulation.
 
-> **Current implementation:** The application operates in simulation mode and is designed with a hardware abstraction layer so that a real device interface can be integrated when the required hardware communication specifications are available.
+> **Note:** The application currently operates in simulation mode because physical IFF hardware is not available. The architecture is designed to support future hardware integration when the required hardware communication specifications are available.
 
----
+### ✨ Features
 
-## ✨ Features
-
-- 🖥️ Modern PyQt5 desktop interface
+- 🖥️ PyQt5 desktop application
 - ⚙️ Device ID and ASS configuration
-- ✅ Configuration input validation
-- 💾 Persistent configuration using JSON
+- ✅ Configuration validation
+- 💾 JSON-based configuration persistence
 - 🔄 Configuration reset functionality
 - 🔌 Device connection management
-- 📡 Real-time connection monitoring
-- 🧪 Hardware-independent device simulation
+- 🟢 Device status monitoring
+- 🧪 Hardware-independent simulation mode
 - 📝 Application event logging
-- 🛡️ Error handling for configuration and device operations
-- 🧩 Modular backend architecture
-- 🧪 Automated unit testing with pytest
-- 🔧 Hardware abstraction through a device interface
+- 🛡️ Error handling
+- 🧱 Modular backend architecture
+- 🧪 Automated testing with Pytest
+- 🔧 Hardware-ready device abstraction
 
----
-
-## 🏗️ System Architecture
-
-The application follows a modular architecture that separates the user interface from device management and configuration logic.
+### 🏗️ Application Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │      PyQt5 GUI       │
-                    │       main.py        │
-                    └──────────┬───────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-      ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-      │ ConfigManager│ │ConfigValidator│ │  AppLogger   │
-      └──────────────┘ └──────────────┘ └──────────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    DeviceManager     │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   DeviceInterface    │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      Simulator       │
-                    └──────────────────────┘
+                    ┌─────────────────────────┐
+                    │       PyQt5 UI          │
+                    │       main.py           │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │     DeviceManager       │
+                    │ Device State Management │
+                    └────────────┬────────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    ▼                         ▼
+          ┌──────────────────┐      ┌──────────────────┐
+          │    Simulator     │      │ Future Hardware  │
+          │   Device Layer   │      │   Integration    │
+          └──────────────────┘      └──────────────────┘
 
-The DeviceInterface provides an abstraction between the application and the underlying device implementation.
+          ┌──────────────────┐
+          │  ConfigManager   │
+          │ JSON Persistence │
+          └──────────────────┘
 
-The current Simulator implements this interface for development and testing without requiring physical hardware.
+          ┌──────────────────┐
+          │ ConfigValidator  │
+          │ Input Validation │
+          └──────────────────┘
 
----
+          ┌──────────────────┐
+          │    AppLogger     │
+          │   Event Logging  │
+          └──────────────────┘
+```
 
-## 📂 Project Structure
-PYQT5/
+### 📂 Project Structure
+
+```text
+Drone-IFF-Configuration-Monitoring/
 │
 ├── backend/
 │   ├── __init__.py
@@ -85,197 +82,281 @@ PYQT5/
 ├── main.py
 ├── main.ui
 ├── config.json
-├── requirements.txt
+├── device.log
 ├── README.md
 └── .gitignore
+```
 
----
+### 🛠️ Technologies Used
 
-## 🛠️ Technologies Used
-~ Frontend / GUI
-Python
-PyQt5
-Qt Designer
+| Technology | Purpose |
+|---|---|
+| Python | Application development |
+| PyQt5 | Desktop GUI |
+| Qt Designer | UI design |
+| JSON | Configuration persistence |
+| Pytest | Automated testing |
+| Git | Version control |
+| GitHub | Source code hosting |
 
-~ Backend
-Python
-JSON
-Object-Oriented Programming
-Abstract Base Classes
+### ⚙️ Installation
 
-~ Testing
-pytest
+Clone the repository:
 
-~ Development Tools
-Git
-GitHub
-Virtual Environment
-
----
-## ⚙️ Installation
-1. Clone the repository
+```bash
 git clone https://github.com/dhanyasreegopinigari-blue/drone-iff-configuration-monitor.git
-2. Navigate to the project
+```
+
+Navigate to the project:
+
+```bash
 cd drone-iff-configuration-monitor
-3. Create a virtual environment
+```
+
+Create a virtual environment:
+
+```bash
 python -m venv .venv
-4. Activate the virtual environment
-Windows PowerShell
+```
+
+Activate the virtual environment on Windows PowerShell:
+
+```powershell
 .\.venv\Scripts\Activate.ps1
+```
 
-If PowerShell blocks script execution:
+If PowerShell blocks activation:
 
+```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
-Then activate again:
-
 .\.venv\Scripts\Activate.ps1
-5. Install dependencies
-pip install -r requirements.txt
-▶️ Running the Application
+```
 
-Run:
+Install the required dependencies:
 
+```bash
+python -m pip install PyQt5 pytest
+```
+
+### ▶️ Running the Application
+
+After activating the virtual environment, run:
+
+```bash
 python main.py
+```
 
 The PyQt5 desktop application will open.
 
-## 🧪 Running Tests
+### 🧪 Testing
 
-The project includes automated tests for configuration validation, configuration management, and device management.
+Run the complete automated test suite:
 
-Run:
-
+```bash
 python -m pytest
+```
 
-Current test status:
+Current test result:
 
+```text
 16 passed
-----
+```
 
-## 🔄 Application Workflow
+The tests cover:
 
-~The main configuration workflow is:
+- Configuration validation
+- Configuration saving
+- Configuration loading
+- Configuration reset
+- Device configuration
+- Device connection
+- Device disconnection
+- Device state management
+- Simulation behaviour
 
+### 🔄 Application Workflow
+
+```text
+Start Application
+       │
+       ▼
+Load Interface
+       │
+       ▼
 Select Device ID
-       ↓
+       │
+       ▼
 Select ASS
-       ↓
+       │
+       ▼
 Validate Configuration
-       ↓
+       │
+       ├── Invalid ──► Show Error
+       │
+       ▼
 Configure Device
-       ↓
+       │
+       ▼
 Connect Device
+       │
+       ▼
+Monitor Device Status
+       │
+       ▼
+Save / Reset Configuration
+```
+
+### 🖥️ Device Simulation
+
+Because physical Drone IFF hardware is not currently available, the application includes a software-based device simulator.
+
+The simulator supports the following basic operations:
+
+```text
+configure()
+connect()
+disconnect()
+is_connected()
+```
+
+This allows the application to be developed and tested without physical hardware.
+
+### 🔌 Hardware Integration Design
+
+The application uses a `DeviceInterface` abstraction to separate application logic from device communication.
+
+```text
+Application
+     │
+     ▼
+DeviceManager
+     │
+     ▼
+DeviceInterface
+     │
+     ├── Simulator
+     │
+     └── Future Hardware Implementation
+```
+
+When the required hardware communication specifications become available, a hardware-specific implementation can be added without redesigning the entire application.
+
+> The current project does not claim real hardware communication or implementation of a specific IFF protocol.
+
+### 🛡️ Error Handling
+
+The application handles several failure scenarios, including:
+
+- Invalid Device ID
+- Invalid ASS
+- Missing configuration
+- Configuration failure
+- Connection failure
+- Invalid JSON configuration
+- Configuration file errors
+- Unexpected application errors
+
+User-facing errors are displayed through PyQt5 message dialogs, while important events are recorded in the application log.
+
+### 📝 Logging
+
+Application events are recorded in:
+
+```text
+device.log
+```
+
+Example:
+
+```text
+[2026-09-30 10:30:15] INFO: Device configured - ID: 1234, ASS: 4321
+[2026-09-30 10:30:16] INFO: Device connected successfully
+```
+
+Logging helps with debugging and monitoring application behaviour.
+
+### 💾 Configuration Storage
+
+Configuration data is stored locally in:
+
+```text
+config.json
+```
+
+Example:
+
+```json
+{
+    "device_id": "1234",
+    "ass": "4321"
+}
+```
+
+The ConfigManager provides:
+
+- Save configuration
+- Load configuration
+- Reset configuration
+- Error handling for invalid configuration files
+
+### 🧪 Testing Strategy
+
+The project uses Pytest to test backend functionality independently from the graphical interface.
+
+The main testing flow is:
+
+```text
+Validator
+    ↓
+ConfigManager
+    ↓
+DeviceManager
+    ↓
+Simulator
+```
+
+This allows important application logic to be tested without manually interacting with the GUI for every test.
+
+### 🚀 Future Improvements
+
+- 🔌 Integration with actual IFF hardware
+- 📡 Hardware communication protocol implementation
+- 📊 Advanced device monitoring
+- 📈 Real-time telemetry visualization
+- 🗃️ Database-based configuration history
+- 🔐 Enhanced authentication and authorization
+- 📦 Windows executable packaging
+- 🔄 Automatic device reconnection
+- 📋 Advanced event history and diagnostics
+
+### 📦 Deployment
+
+This project is designed as a Windows desktop application rather than a web application.
+
+The planned distribution process is:
+
+```text
+Python Application
        ↓
-Monitor Connection
+PyInstaller
        ↓
-Log Device Events
+Windows .exe
+       ↓
+GitHub Release
+       ↓
+Users can download and run the application
+```
 
-The application also supports saving and resetting configuration data.
----
+### 👩‍💻 Author
 
-##🔌 Device Simulation
-
-The project currently uses a simulated device instead of physical hardware.
-
-This allows the application to be developed and tested without requiring a physical Drone IFF device.
-
-The simulation layer supports:
-
-~Device configuration
-~Connection
-~Disconnection
-~Connection status checking
-~Simulated connection loss
-~Simulated connection recovery
-
-~The simulator is separated from the application through DeviceInterface, allowing a future hardware-specific implementation to replace the simulator without restructuring the entire application.
-
----
-
-## 🧪 Testing Strategy
-
-The project uses automated unit tests to verify core functionality.
-
-### Configuration Validator
-
-Tests include:
-
-Valid configuration
-Missing Device ID
-Missing ASS
-Invalid Device ID
-Invalid ASS
-
-### Configuration Manager
-
-Tests include:
-
-Saving configuration
-Loading configuration
-Handling missing configuration
-Resetting configuration
-
-## Device Manager
-
-Tests include:
-
-Initial device state
-Device configuration
-Device connection
-Connection status checking
-Device disconnection
-Simulated connection loss
-Simulated connection recovery
----
-
-##🛡️ Error Handling
-
-The application includes error handling for important operations such as:
-
-Invalid configuration input
-Configuration save failures
-Configuration loading errors
-Configuration reset failures
-Device configuration failures
-Device connection failures
-Unexpected application errors
-
-Errors are reported through the GUI and recorded using the application logger where appropriate.
----
-
-##🔮 Future Improvements
-
-Potential future development includes:
-
-Integration with a real hardware device
-Hardware-specific communication interface
-Expanded device diagnostics
-Advanced monitoring information
-Configuration profiles
-More comprehensive integration testing
-Windows executable packaging
-Additional UI improvements
----
-
-##⚠️ Hardware Integration Note
-
-This project currently does not communicate with a physical Drone IFF device.
-
-The application has been intentionally designed with a hardware abstraction layer and simulation mode so development and testing can be performed without physical hardware.
-
-Actual hardware integration should be implemented only after the required device communication protocol, interface specifications, and hardware documentation are available.
----
-
-##👩‍💻 Author
-
-Dhanyasree Gopinigari
+**Dhanyasree Gopinigari**
 
 B.Tech Computer Science & Engineering (AI & ML)
----
 
-##📄 License
+- GitHub: https://github.com/dhanyasreegopinigari-blue/
+- LinkedIn: https://www.linkedin.com/in/dhanyasree-gopinigari/
+- Portfolio: https://dhanyasreegopinigari-blue.github.io/portfolio/
 
-This project is currently intended as a personal academic and portfolio project.
+### 📄 License
 
----
+This project is intended for educational, portfolio, and software-development purposes.
