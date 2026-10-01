@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindo</class>
+ <widget class="QMainWindow" name="MainWindo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1163</width>
+    <height>936</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    background-color: #F4F7FC;
+}</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <widget class="QFrame" name="mainFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QFrame" name="bottomFrame">
+         <property name="styleSheet">
+          <string notr="true">QFrame#bottomFrame {
+    background-color: #FFFFFF;
+    border: 1px solid #E1EAF4;
+    border-radius: 20px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QFrame" name="leftFrame">
+            <property name="styleSheet">
+             <string notr="true">QFrame#leftFrame {
+    background-color: #F2F7FD;
+    border: 1px solid #E1EAF4;
+    border-radius: 20px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="1" column="0">
+              <widget class="QFrame" name="statusFrame">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame {
+    background-color: #E5F8F1;
+    border-radius: 18px;
+    border: 1px solid #C5EDE0;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <item row="2" column="0">
+                 <widget class="QLabel" name="statusValueLabel">
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+    color: #159447;
+    font-size: 18px;
+    font-weight: bold;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>🟢 CONNECTED</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="deviceReadyLabel">
+                  <property name="text">
+                   <string>● Device Ready</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="statusLabelTitle">
+                  <property name="text">
+                   <string>✓ STATUS</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QFrame" name="assFrame">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>29834</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame#assFrame {
+    background-color: #F2F7FD;
+    border: 1px solid #DFEAF6;
+    border-radius: 16px;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QLabel" name="assLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>☷ ASS</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>240</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="assCombo">
+                  <property name="styleSheet">
+                   <string notr="true">QComboBox {
+    background-color: #FFFFFF;
+    color: #29435D;
+    border: 1px solid #D5E2EF;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QComboBox:hover {
+    border: 1px solid #1680E8;
+}
+
+QComboBox:focus {
+    border: 2px solid #1680E8;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white;
+    color: #29435D;
+    selection-background-color: #DDEEFF;
+    selection-color: #1267D6;
+    border: 1px solid #D5E2EF;
+}</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>1234</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>4321</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>7341</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1793</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>5648</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>2468</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>7968</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>6987</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>9866</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QFrame" name="configurationFrame">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>294983</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame#configurationFrame {
+    background-color: #FFFFFF;
+    border: 1px solid #E1EAF4;
+    border-radius: 20px;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QLabel" name="configurationTitle">
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+    color: white;
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #1267D6,
+        stop: 1 #19D3B2
+    );
+    border-radius: 20px;
+    padding: 12px;
+    font-weight: bold;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>⚙  Configuration Tool</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QFrame" name="deviceIDFrame">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>500</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame#deviceIDFrame {
+    background-color: #F2F7FD;
+    border: 1px solid #DFEAF6;
+    border-radius: 16px;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="deviceIDLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>🔢 DEVICE ID</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Preferred</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>240</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="deviceIDCombo">
+                  <property name="styleSheet">
+                   <string notr="true">QComboBox {
+    background-color: #FFFFFF;
+    color: #29435D;
+    border: 1px solid #D5E2EF;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QComboBox:hover {
+    border: 1px solid #1680E8;
+}
+
+QComboBox:focus {
+    border: 2px solid #1680E8;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white;
+    color: #29435D;
+    selection-background-color: #DDEEFF;
+    selection-color: #1267D6;
+    border: 1px solid #D5E2EF;
+}</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>1234</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>4321</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>7341</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1793</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>5648</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>2468</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>7968</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>6987</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>9866</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QFrame" name="spaceFrame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QFrame" name="buttonsFrame">
+               <property name="minimumSize">
+                <size>
+                 <width>8</width>
+                 <height>39</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>6981</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QPushButton" name="resetButton">
+                  <property name="font">
+                   <font>
+                    <pointsize>9</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#resetButton {
+    background-color: #F3F7FC;
+    color: #7189A3;
+    border: 1px solid #D7E3F0;
+    border-radius: 15px;
+    padding: 10px 24px;
+    font-weight: bold;
+}
+
+QPushButton#resetButton:hover {
+    background-color: #EAF1F8;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>↻  RESET</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Preferred</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>240</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveButton">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#saveButton {
+    background-color: #1268D7;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 26px;
+    font-weight: bold;
+}
+
+QPushButton#saveButton:hover {
+    background-color: #0D58B8;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>▣ SAVE</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="applyButton">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#applyButton {
+    background-color: #14B86D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 26px;
+    font-weight: bold;
+}
+
+QPushButton#applyButton:hover {
+    background-color: #109D5D;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>✓  Apply</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QFrame" name="droneFrame">
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 20px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_6">
+             <item row="0" column="0">
+              <widget class="QLabel" name="droneImageLabel">
+               <property name="styleSheet">
+                <string notr="true">QLabel#droneImageLabel {
+    border-radius: 20px;
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>../DHANYA SREE/drone1.jpeg</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+               </property>
+               <property name="margin">
+                <number>-51</number>
+               </property>
+               <property name="indent">
+                <number>-1</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QFrame" name="headerFrame">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: #0756A8;
+    border: none;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>7</number>
+          </property>
+          <property name="leftMargin">
+           <number>11</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>8</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="droneIFFTitle">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>3483</width>
+              <height>347358</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>28</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel#droneIFFTitle {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    background: transparent;
+}</string>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="text">
+             <string>DRONE IFF</string>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="detectLabel">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>4493</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>24</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #EAF5FF;
+    font-size: 24px;
+    background: transparent;
+}</string>
+            </property>
+            <property name="text">
+             <string>◈ Detect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="identifyLabel">
+            <property name="font">
+             <font>
+              <pointsize>24</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #EAF5FF;
+    font-size: 24px;
+    background: transparent;
+}</string>
+            </property>
+            <property name="text">
+             <string>◎ Identify</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rsepondLabel">
+            <property name="font">
+             <font>
+              <pointsize>24</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #EAF5FF;
+    font-size: 24px;
+    background: transparent;
+}</string>
+            </property>
+            <property name="text">
+             <string>ϟ Respond</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1163</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
